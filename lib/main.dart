@@ -79,9 +79,8 @@ class MyApp extends StatelessWidget {
             if (snapshot.connectionState == ConnectionState.active) {
               if (snapshot.hasData) {
                 return const ResponsiveLayout(
-                  WebScreenLayout: WebScreenLayout(),
-                  MobileScreenLayout: NewMobileScreen(),
-                );
+                    WebScreenLayout: WebScreenLayout(),
+                    MobileScreenLayout: NewMobileScreen());
               } else if (snapshot.hasError) {
                 return Center(
                   child: Text('${snapshot.error}'),

@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:instagram_clone_flutter/data_models/user.dart';
 import 'package:instagram_clone_flutter/providers/user_provider.dart';
 import 'package:instagram_clone_flutter/resources/firestore_methods.dart';
+import 'package:instagram_clone_flutter/screens/drawer.dart';
 import '../screens/home_screen.dart';
 import 'package:instagram_clone_flutter/utils/colors.dart';
 import 'package:instagram_clone_flutter/utils/utils.dart';
@@ -117,12 +118,17 @@ class _AddPostScreenState extends State<AddPostScreen> {
     OurUser user = Provider.of<UserProvider>(context).getUser;
     return _file == null
         ? Scaffold(
+            appBar: AppBar(
+              title: const Text('Add a post'),
+              backgroundColor: mobileBackgroundColor,
+            ),
             body: Center(
               child: IconButton(
                 icon: const Icon(Icons.upload),
                 onPressed: () => _selectImage(context),
               ),
             ),
+            drawer: const MainDrawer(),
           )
         : Scaffold(
             appBar: AppBar(

@@ -73,7 +73,7 @@ class _PostCardState extends State<PostCard> {
                         child: ListView(
                           padding: const EdgeInsets.symmetric(vertical: 16),
                           shrinkWrap: true,
-                          children: [Text('Delete')]
+                          children: [const Text('Delete')]
                               .map(
                                 (e) => InkWell(
                                   onTap: () {},
